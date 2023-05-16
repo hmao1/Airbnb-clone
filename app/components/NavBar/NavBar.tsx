@@ -1,16 +1,11 @@
-import { SafeUser } from "@/app/types";
+"use client";
 
-import Categories from "./Categories";
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
-interface NavbarProps {
-  currentUser?: SafeUser | null;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
+const NavBar = () => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div
@@ -32,13 +27,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
           >
             <Logo />
             <Search />
-            <UserMenu currentUser={currentUser} />
+            <UserMenu />
           </div>
         </Container>
       </div>
-      <Categories />
     </div>
   );
 };
 
-export default Navbar;
+export default NavBar;
